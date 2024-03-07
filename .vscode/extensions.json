@@ -1,5 +1,6 @@
 {
     "recommendations": [
-        "telesoho.vscode-markdown-paste-image"
+        "telesoho.vscode-markdown-paste-image",
+        "github.vscode-pull-request-github"
     ]
 }
