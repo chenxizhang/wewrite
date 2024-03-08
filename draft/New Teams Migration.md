@@ -7,11 +7,11 @@ date: 2024-03-08
 
 # New Teams迁移须知
 
-New Teams自动迁移将在2024年3月31日后开始。
+New Teams自动迁移已经开始。并且根据最新的文档，经典Teams将会在6月30日退役。
 
 从当前的Teams（经典Teams 版本），到新Teams的迁移将是自动的。但是，这个变更也需要对客户的情况进行全面评估，并根据其环境和用户设备进行定制化准备。
 
-VDI和Microsoft Teams Room（MTR）以及Surface Hub的设备不受2024年3月31日时间表的影响。从官方文档[Classic Teams users to be automatically updated to new Teams - Microsoft Teams | Microsoft Learn](https://learn.microsoft.com/en-us/microsoftteams/teams-classic-client-end-of-availability)中可以得知， VDI用户将在第二阶段被考虑进去。
+从官方文档[Classic Teams users to be automatically updated to new Teams - Microsoft Teams | Microsoft Learn](https://learn.microsoft.com/en-us/microsoftteams/teams-classic-client-end-of-availability)中可以得知， VDI用户将在第二阶段被考虑进去。
 
 
 ## 用户指南
