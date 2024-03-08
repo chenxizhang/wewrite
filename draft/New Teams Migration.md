@@ -1,7 +1,7 @@
 ---
 author: 365刺客Teams团队
 title: New Teams迁移须知
-digest: 
+digest: 经典版Teams即将自动迁移到新版Teams
 date: 2024-03-08
 ---
 
@@ -24,11 +24,9 @@ VDI和Microsoft Teams Room（MTR）以及Surface Hub的设备不受2024年3月31
 | Teams App   | Version 1.6.00.4472 可以看到“ Try the new Teams” 切换键。如果您的版本较低，请选择菜单 (...) >Check for updates > Updates，然后重新启动您的应用程序。 | 要查看“Try the new teams”切换键，您当前的 Teams 应用程序必须运行版本 1.6.00.12303 或更高版本。如果您的版本较低，请选择菜单 (...)，然后选择检查更新，并重新启动您的应用程序。 |
 | 设置        | 要接收Teams 通知，请在Notifications > Microsoft Teams 中打开 “Show Notification Banners” 设置。| 安装新客户端后，如果用户在初始的 macOS 通知设置警告中没有选择允许通知，则用户必须从系统设置中打开“Allow Notifications”。 |
 | 启用GPO     | 要安装新的 Teams 客户端，请确保用户的以下 GPO 设置为“未配置”状态：Prevent non-admins users from installing packaged Windows apps, Allow all trusted apps to install. | 要安装新的 Teams 客户端，用户需要其计算机的管理员权限。如果用户没有管理员权限，管理员可以使用他们的 MDM（或其他部署和安装软件到没有管理员权限的设备的方式）使用这个[PKG](https://statics.teams.cdn.office.net/production-osx/enterprise/webview2/lkg/MicrosoftTeams.pkg)。 |
-| Webview 2   | 更新到最新版本。必须启用自动更新。[Minimum version 110](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-release-schedule) | 更新到最新版本。自动更新必须已启用。最低版本为110。|
+| Webview2   | 更新到最新版本。必须启用自动更新。[Minimum version 110](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-release-schedule) | 更新到最新版本。自动更新必须已启用。最低版本为110。|
 
 ### 2. 部署方法与管理员控制
-
-#### New Teams 的当前部署方法
 
 - New Teams 的当前部署方法
 
@@ -45,6 +43,10 @@ VDI和Microsoft Teams Room（MTR）以及Surface Hub的设备不受2024年3月31
     a. Teams Admin Center 部署
 
     ![](../images/20240308112506.png)
+
+    ![](../images/20240308114848.png)
+
+    ![](../images/20240308114919.png)
     
     b. 批量部署
     
@@ -52,22 +54,39 @@ VDI和Microsoft Teams Room（MTR）以及Surface Hub的设备不受2024年3月31
 
     > **步骤 1：部署New Teams 应用程序**
     > 
-    > 选项 A：为单台计算机下载并安装New Teams
+    > **选项 A：** 为单台计算机下载并安装New Teams
     > 1. 下载[exe安装包](https://go.microsoft.com/fwlink/?linkid=2243204&clcid=0x409)。
     > 2. 以管理员身份打开CMD。
     > 3. 在提示符下输入: ./teamsbootstrapper.exe -p 。
     > 
     > 将显示成功或失败状态。如果收到错误，请参考[Common HRESULT values](https://learn.microsoft.com/en-us/windows/win32/seccrypto/common-hresult-values)。
     > 
-    > <br>选项 B：在您的组织中部署New Teams
+    > <br>**选项 B：** 在您的组织中部署New Teams
     >
     > 要将此安装程序部署到一组计算机或您的整个组织，请按照以下步骤进行：
-    > 1.	下载[exe安装包](https://go.microsoft.com/fwlink/?linkid=2243204&clcid=0x409)。
-    > 2.	用[Intune](https://learn.microsoft.com/en-us/mem/intune/fundamentals/what-is-intune), [Microsoft Endpoint Configuration Manager](https://learn.microsoft.com/en-us/configmgr/core/understand/introduction), [Group Policy](https://learn.microsoft.com/en-us/troubleshoot/windows-server/group-policy/use-group-policy-to-install-software)，或使用第三方分发软件将安装程序分发到目标计算机。
-    > 3.	在每台计算机上运行安装程序。
+    > 1. 下载[exe安装包](https://go.microsoft.com/fwlink/?linkid=2243204&clcid=0x409)。
+    > 2. 用[Intune](https://learn.microsoft.com/en-us/mem/intune/fundamentals/what-is-intune), [Microsoft Endpoint Configuration Manager](https://learn.microsoft.com/en-us/configmgr/core/understand/introduction), [Group Policy](https://learn.microsoft.com/en-us/troubleshoot/windows-server/group-policy/use-group-policy-to-install-software)，或使用第三方分发软件将安装程序分发到目标计算机。
+    > 3. 在每台计算机上运行安装程序。
     >
     ><br> **步骤 2：将New Teams 设置为默认**
+    >
+    > 登陆[Microsoft Teams admin center](https://admin.teams.microsoft.com/).
+    > 1. 从左侧导航窗格中选择Teams > Teams update policies。
+    > 2. 选择“添加”以创建新策略，或选择现有策略以打开更新策略。
+    > 3. 为更新策略命名，添加描述，并选择“use New Teams Client”的设置，如下所示。
+    > ![](../images/20240308133245.png)
+    > <br>
 
+    <br>
+    c. 使用 M365 Apps进行部署
+    
+    从九月下旬开始，New Teams 开始自动和新的以及现有的Microsoft 365 Apps 安装包一起安装到windows上。时间表如下：
+    
+    ![](../images/20240308133452.png)
+    
+    如果经典版 Teams 应用程序已经安装，Microsoft 365 Apps deployment将在设备上将News Teams 与经典版 Teams 并存安装。经典版 Teams 的安装不会改变。
+<br>
+<br>
 
 
 ## 什么时候New Teams 会随着 M365 Apps一起部署？
