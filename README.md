@@ -8,9 +8,6 @@
 ![image](https://github.com/chenxizhang/wewrite/assets/1996954/4cf1edc1-66f5-41ca-aa92-9bf276e731e8)
 ![df7c317e443b30df3907b5301df47c3](https://github.com/chenxizhang/wewrite/assets/1996954/85db13a6-4635-4b74-a3a8-8568edc64532)
 
-
-
-
 ## 如何参与
 
 1. 你需要有一个 `github` 账号，然后通过访问 <https://github.com/chenxizhang/wewrite> 来Fork 这个仓库，然后在线进行编辑。
@@ -26,3 +23,5 @@
 
 - https://doocs.gitee.io/md/
 - https://doocs.github.io/md
+
+

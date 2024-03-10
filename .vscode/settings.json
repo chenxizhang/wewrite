@@ -1,4 +1,5 @@
 {
     "MarkdownPaste.path": "${workspaceRoot}/images",
     "MarkdownPaste.silence": true,
+    "markdown-image.github.repository": "https://github.com/chenxizhang/wewrite"
 }
