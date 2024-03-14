@@ -2,7 +2,7 @@
 author: 365刺客Teams团队
 title: New Teams迁移须知
 digest: 经典版Teams即将自动迁移到新版Teams
-date: 2024-03-08
+date: 2024-03-14
 ---
 
 # New Teams迁移须知
